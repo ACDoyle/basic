@@ -16,3 +16,20 @@ if __name__ == '__main__':
     assert find_message("How are you? Eh, ok. Low or Lower? Ohhh.") == "HELLO", "hello"
     assert find_message("hello world!") == "", "Nothing"
     assert find_message("HELLO WORLD!!!") == "HELLOWORLD", "Capitals"
+    
+import string
+def find_message(text):
+    """Find a secret message"""
+    #tests
+    if not 0 < len(text) <=1000:
+        return ""
+    if not all(ch in string.printable for ch in text):
+        return ""
+    #discover
+    result = ''
+    for c in text:
+        if c.isupper():
+            result += c
+    return result
+    
+    
