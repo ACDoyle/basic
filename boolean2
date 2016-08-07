@@ -1,0 +1,27 @@
+OPERATIONS = {
+    "conjunction": lambda x, y: x and y,
+    "disjunction": lambda x, y: x or y, 
+    "implication": lambda x, y: (not x) or y,
+    "exclusive": lambda x, y: x != y,
+    "equivalence": lambda x, y: x == y
+}
+​boolean = lambda x, y, operation: OPERATIONS[operation](x, y)
+
+
+def boolean(x, y, operation):
+    if operation == "conjunction": return x and y
+    if operation == "disjunction": return x or y
+    if operation == "implication": return (not x) or y
+    if operation == "exclusive": return (x or y) and (not (x and y))
+    if operation == "equivalence": return 1 if x == y else 0
+
+def boolean(x, y, operation):
+    f = {"conjunction" : lambda a,b: a and b,
+         "disjunction" : lambda a,b: a or b,
+         "implication" : lambda a,b: not a or b,
+         "exclusive"   : lambda a,b: (a and not b) or (not a and b),
+         "equivalence" : lambda a,b: (a and b) or (not a and not b)
+        }.get(operation)
+    return f(x,y)
+
+
