@@ -1,0 +1,8 @@
+def checkio(data):
+
+    data.sort()
+
+    m, r = divmod(len(data), 2)
+
+    return data[m] if r == 1 else (data[m] + data[m-1]) / 2
+
