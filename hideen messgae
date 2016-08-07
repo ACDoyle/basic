@@ -33,3 +33,8 @@ def find_message(text):
     return result
     
     
+    
+import string
+def find_message(text):
+      return filter(lambda x: x in string.uppercase, text)
+    
