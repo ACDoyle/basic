@@ -8,6 +8,16 @@ def count_inversion(sequence):
             if sequence[i] > sequence[j]:
                 count += 1
     return count
+    
+def count_inversion(seq):
+    """
+    Count inversions in a sequence of numbers
+    """
+    count = 0
+    for i in range(len(seq)-1):
+        count += len([x for x in seq[i+1:] if x < seq[i]])
+    return count
+
 
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
